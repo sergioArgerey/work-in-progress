@@ -96,7 +96,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,        KC_1,           KC_2,         KC_3,     KC_4,     KC_5,    KC_NO,               KC_NO,    KC_6,   KC_7,    KC_8,     KC_9,       KC_0,              KC_NO,
   KC_NO,          TD(TD_QUOTES),  KC_W,         KC_E,     KC_R,     KC_T,    KC_NO,          TO(QWERTY),    KC_Y,   KC_U,    KC_I,     KC_O,       TD(TD_AT_QES),   KC_NO,
     KC_NO,        KC_Q,           KC_S,         KC_D,     KC_F,     KC_G,                                   KC_H,   KC_J,    KC_K,     KC_L,       KC_P,              KC_NO,
-    KC_NO,        KC_A,           KC_X,         KC_C,     KC_V,     KC_B,    KC_DOWN,             KC_UP,    KC_N,   KC_M,  KC_COMMA,   KC_DOT,     KC_SCLN,           TT(IDEA),
+    A(KC_TAB),    KC_A,           KC_X,         KC_C,     KC_V,     KC_B,    KC_DOWN,             KC_UP,    KC_N,   KC_M,  KC_COMMA,   KC_DOT,     KC_SCLN,           TT(IDEA),
     CTL_T(KC_ESCAPE),     KC_Z,      KC_NO,    KC_NO,  MO(SYMBOL),                                                 KC_LSFT,  TT(CONTROL),  KC_NO,  CTL_T(ES_MINS),  KC_NO,
                                                                     KC_HOME, KC_END,                    KC_NO, KC_ESCAPE,
                                                                               KC_NO,                    KC_PGUP,
@@ -209,11 +209,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 2: Mouse control, browse  and media
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * |        |      |      |      |      |      |      |           |      |      | VolDn| VolUp| Mute |      |        |
+ * |        |      |      |      |      |      |      |           |      |      |      |      | Mute |      |        |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * |        |      |🠐 Arr| Ms UP |Arr →|      |      |           |      |      | Prev |Wheel↑| Next |      |        |
+ * |        |      |🠐 Arr| Ms UP |Arr →|brilup|      |           |      |VolUp | Prev |Wheel↑| Next |      |        |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |        |      |MsLeft|MsDown|MsRght|      |------|           |------|      |MsLeft|Wheel↓|MsRigh|      |        |
+ * |        |      |MsLeft|MsDown|MsRght|brildw|------|           |------|VolDn |MsLeft|Wheel↓|MsRigh|      |        |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
@@ -229,15 +229,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [CONTROL] = LAYOUT_ergodox_pretty(
   // left hand
-  KC_NO,  KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_NO,         KC_NO, KC_NO, KC_VOLD, KC_VOLU,       KC_MUTE, KC_NO, KC_NO,
-  KC_NO,  KC_NO, KC_LEFT, KC_MS_U, KC_RGHT, KC_NO, KC_NO,         KC_NO, KC_NO, KC_MPRV, KC_MS_WH_UP,   KC_MNXT, KC_NO, TO(SYMBOL),
-  KC_NO,  KC_NO, KC_MS_L, KC_MS_D, KC_MS_R, KC_NO,                       KC_NO, KC_BTN1, KC_MS_WH_DOWN, KC_BTN2, KC_NO, TO(QWERTY),
-  KC_NO,  KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_DOWN,       KC_UP, KC_NO, KC_NO,   KC_NO,         KC_NO,   KC_NO, KC_NO,
+  KC_NO,  KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,         KC_NO, KC_NO,   KC_NO,   KC_NO,         KC_MUTE, KC_NO, KC_NO,
+  KC_NO,  KC_NO, KC_LEFT, KC_MS_U, KC_RGHT, KC_BRIU, KC_NO,         KC_NO, KC_VOLU, KC_MPRV, KC_MS_WH_UP,   KC_MNXT, KC_NO, TO(SYMBOL),
+  KC_NO,  KC_NO, KC_MS_L, KC_MS_D, KC_MS_R, KC_BRID,                       KC_VOLD, KC_BTN1, KC_MS_WH_DOWN, KC_BTN2, KC_NO, TO(QWERTY),
+  KC_NO,  KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_DOWN,       KC_UP, KC_NO,   KC_NO,   KC_NO,         KC_NO,   KC_NO, KC_NO,
   CTL_T(KC_ESCAPE),   KC_NO,    KC_NO,  KC_NO,    KC_NO,                          KC_LSFT, TO(QWERTY),   KC_NO,   KC_NO,   KC_NO,
 
-                                                 KC_NO, KC_NO,          KC_NO, KC_NO,
-                                                        KC_NO,          KC_NO,
-                                        KC_F5, KC_WBAK, KC_NO,          KC_NO, KC_NO, KC_MPLY
+                                           KC_NO, KC_NO,               KC_NO, KC_NO,
+                                                  KC_NO,               KC_NO,
+                                  KC_F5, KC_WBAK, KC_NO,               KC_NO, KC_NO, KC_MPLY
 ),
 
 
